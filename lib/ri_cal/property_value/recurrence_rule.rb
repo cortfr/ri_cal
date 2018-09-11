@@ -50,7 +50,9 @@ module RiCal
           @value = string
           dup_hash = {}
           string.split(";").each do |value_part|
-            initialize_from_value_part(value_part, dup_hash)
+            if value_part and value_part.length > 0
+              initialize_from_value_part(value_part, dup_hash)
+            end
           end
         end
       end
